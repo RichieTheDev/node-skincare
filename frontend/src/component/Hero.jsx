@@ -3,17 +3,6 @@ import Hero1 from "../assets/Hero1.jpg";
 import axios from "axios";
 
 const Hero = () => {
-  const [ducks, setDucks] = useState([]);
-  useEffect(() => {
-   const fetchData= async ()=>{
-    try {
-      const res = await axios.get('jk').setDucks(res.duck)
-    } catch (error) {
-      console.log(error)
-    }
-   }
-   fetchData()
-  }, []);
   return (
     <div className="">
       <img
@@ -21,20 +10,12 @@ const Hero = () => {
         alt=""
         className="bg-cover bg-center w-screen h-[75vh] object-cover relative "
       />
-      <p className="absolute top-40 text-8xl left-40 text-white">
+      <p className="absolute lg:top-40 sm:text-8xl lg:left-40 sm:top-24  sm:left-20 top-32 text-4xl left-10 text-white">
         PURE CARE <br />
-        <span className="text-6xl">
+        <span className="text-5xl sm:text-6xl">
           Elevate your beauty <br /> with nature's touch
         </span>
       </p>
-
-      <div>
-        {ducks?.map((duck) => (
-          <div key={duck.id}>
-            <img src={duck.title} alt="" width={400} />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
